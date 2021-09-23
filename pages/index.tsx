@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import { LinkTo } from '../components/LinkTo';
 
-const Home: NextPage = () => (
+const HomePage: NextPage = () => (
   <>
     <h1>Welcome!</h1>
     <p>
@@ -24,4 +24,4 @@ const Home: NextPage = () => (
   </>
 );
 
-export default Home;
+export default HomePage;

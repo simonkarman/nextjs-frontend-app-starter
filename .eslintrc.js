@@ -11,7 +11,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+        extensions: ['.js', '.jsx', '.d.ts', '.ts', '.tsx'],
       },
     },
   },
@@ -34,7 +34,7 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-restricted-syntax': 'off',
     'no-use-before-define': ['error', { functions: false, classes: false, variables: true }],
-    'no-process-env': 'off',
+    'no-process-env': 'error',
     'no-await-in-loop': 'off',
     'prefer-destructuring': 'off',
     'import/prefer-default-export': 'off',

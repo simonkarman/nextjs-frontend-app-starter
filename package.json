@@ -8,9 +8,11 @@
     "test": "jest --coverage --silent --verbose",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "yarn lint --fix",
-    "precommit": "yarn lint && yarn build && yarn test"
+    "precommit": "yarn lint && yarn build && yarn test",
+    "contentful-typescript-codegen": "./contentful-typescript-codegen.sh"
   },
   "dependencies": {
+    "contentful": "^9.0.0",
     "next": "11.1.2",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -23,6 +25,9 @@
     "@typescript-eslint/eslint-plugin": "^4.31.2",
     "@typescript-eslint/parser": "^4.31.2",
     "babel-plugin-styled-components": "^1.13.2",
+    "contentful-management": "^7.39.1",
+    "contentful-typescript-codegen": "^3.2.2",
+    "dotenv-flow": "^3.2.0",
     "eslint": "^7.32.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-next": "11.1.2",
@@ -34,6 +39,7 @@
     "husky": "4.3.8",
     "jest": "^27.2.1",
     "lint-staged": "^11.1.2",
+    "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
     "typescript": "4.4.3",
     "yarn": "^1.22.11"
