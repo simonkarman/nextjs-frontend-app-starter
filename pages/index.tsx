@@ -17,7 +17,7 @@ const HomePage: NextPage = () => (
       time. Feel free to look around and give me feedback on whatever you find.
     </p>
     <p>
-      <LinkTo href="projects">
+      <LinkTo href="/projects">
         Projects can be found here
       </LinkTo>
     </p>

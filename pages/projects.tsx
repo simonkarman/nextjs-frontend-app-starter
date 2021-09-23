@@ -50,7 +50,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
           .slice(0, 4)
           .map(({ fields: { name, title, date } }) => (
             <Card>
-              <LinkTo href={`projects/${name}`}>
+              <LinkTo href={`/projects/${name}`}>
                 {title}
                 {' '}
                 (
