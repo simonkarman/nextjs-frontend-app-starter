@@ -8,9 +8,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await contentful().getEntries<IProjectFields>('project')).items
     .map((project) => project.fields)
     .sort((a, b) => b.date.localeCompare(a.date))
-    .slice(0, 3)
     .map((project) => ({ params: { name: project.name } })),
-
   fallback: false,
 });
 
@@ -25,7 +23,9 @@ export const getStaticProps: GetStaticProps<IProjectFields> = async (context) =>
 
 type ProjectPageProps = InferGetStaticPropsType<typeof getStaticProps>;
 const ProjectPage: NextPage<ProjectPageProps> = (props: ProjectPageProps) => {
-  const { title, description, image } = props;
+  const {
+    name, title, description, image,
+  } = props;
   return (
     <>
       <h1>
@@ -35,6 +35,9 @@ const ProjectPage: NextPage<ProjectPageProps> = (props: ProjectPageProps) => {
         {description}
       </p>
       <img src={image.fields.file.url} alt="project" width="400" />
+      <p>
+        <a href={`https://www.simonkarman.nl/projects/${name}`}>Read more...</a>
+      </p>
     </>
   );
 };

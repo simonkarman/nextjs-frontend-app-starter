@@ -41,13 +41,13 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
         </Card>
       ))}
       <hr />
-      <h1>Last 3 Projects (dynamic)</h1>
+      <h1>Last 4 Projects (dynamic)</h1>
       <p>Slow because data needs to be fetched by client and not part of SEO, however does not need a rebuild to change</p>
       {fetching && (<div>Loading...</div>)}
       {fetching || (
         fetchedProjects?.items
           .sort((a, b) => b.fields.date.localeCompare(a.fields.date))
-          .slice(0, 3)
+          .slice(0, 4)
           .map(({ fields: { name, title, date } }) => (
             <Card>
               <LinkTo href={`projects/${name}`}>

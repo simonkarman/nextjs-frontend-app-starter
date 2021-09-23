@@ -6,8 +6,10 @@ This is a [Next.js](https://nextjs.org/) implementation of the [simonkarman.nl](
 - Next Export for Static CDN
 - Generating TypeScript Interfaces for Contentful
 - Custom React Hooks
+- "Styled" with Styled Components
 - Linting with ESLint
 - Unit Testing using Jest
+- Precommit Hooks with Husky
 
 ## Getting Started
 
