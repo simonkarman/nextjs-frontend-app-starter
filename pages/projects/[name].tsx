@@ -7,7 +7,6 @@ import { contentful } from '../../hooks/contentful';
 export const getStaticPaths: GetStaticPaths = async () => ({
   paths: (await contentful().getEntries<IProjectFields>('project')).items
     .map((project) => project.fields)
-    .sort((a, b) => b.date.localeCompare(a.date))
     .map((project) => ({ params: { name: project.name } })),
   fallback: false,
 });
