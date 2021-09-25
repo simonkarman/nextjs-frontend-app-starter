@@ -42,7 +42,7 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
       <h1>Last 3 Projects (static)</h1>
       <p>Very fast because pre rendered and part of SEO, however need a rebuild to change</p>
       {projects.map(Project)}
-      <hr />
+
       <h1>Last 4 Projects (dynamic)</h1>
       <p>Slow because data needs to be fetched by client and not part of SEO, however does not need a rebuild to change</p>
       {fetching && (<div>Loading...</div>)}
@@ -53,6 +53,9 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
           .slice(0, 4)
           .map(Project)
       )}
+      <LinkTo href="/">
+        Go back home.
+      </LinkTo>
     </>
   );
 };

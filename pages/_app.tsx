@@ -4,10 +4,10 @@ import Link from 'next/link';
 import styled from 'styled-components';
 
 const Header = styled.div`
-  background-color: lightgray;
-  border-bottom: 1px solid gray;
+  background-color: #082447;
+  border-bottom: 1px solid black;
   padding: 1em;
-  color: black;
+  color: white;
 `;
 
 function MyApp({ Component, pageProps }: AppProps) {
