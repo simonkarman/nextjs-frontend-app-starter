@@ -40,9 +40,15 @@ const ProjectPage: NextPage<ProjectPageProps> = (props: ProjectPageProps) => {
       <p>
         <a href={`https://www.simonkarman.nl/projects/${name}`}>Read more on simonkarman.nl...</a>
       </p>
-      <LinkTo href="/">
-        Go back home.
-      </LinkTo>
+      <p>
+        <LinkTo href="/projects">
+          Back to all projects.
+        </LinkTo>
+        |
+        <LinkTo href="/">
+          Go back home.
+        </LinkTo>
+      </p>
     </>
   );
 };

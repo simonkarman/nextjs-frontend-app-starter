@@ -1,5 +1,4 @@
 import type { NextPage, GetStaticProps, InferGetStaticPropsType } from 'next';
-import styled from 'styled-components';
 import { IProjectFields } from '../@types/generated/contentful';
 import { LinkTo } from '../components/LinkTo';
 import { useProjects } from '../hooks';
@@ -14,15 +13,8 @@ export const getStaticProps: GetStaticProps<{ projects: IProjectFields[] }> = as
   },
 });
 
-const Box = styled.div`
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);;
-  border: 1px solid gray;
-  margin: 0.5em;
-  padding: 0.5em;
-`;
-
 const Project = ({ name, title, date }: IProjectFields) => (
-  <Box key={name}>
+  <p key={name}>
     <LinkTo href={`/projects/${name}`}>
       {title}
       {' '}
@@ -30,7 +22,7 @@ const Project = ({ name, title, date }: IProjectFields) => (
       {date}
       )
     </LinkTo>
-  </Box>
+  </p>
 );
 
 type ProjectsPageProps = InferGetStaticPropsType<typeof getStaticProps>;
@@ -39,12 +31,23 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
   const [fetching, fetchedProjects] = useProjects();
   return (
     <>
+      <p>
+        <LinkTo href="/">
+          Go back home.
+        </LinkTo>
+      </p>
       <h1>Last 3 Projects (static)</h1>
-      <p>Very fast because pre rendered and part of SEO, however need a rebuild to change</p>
+      <p>
+        Fast because pre-rendered and part of Search Engine Optimization (SEO),
+        however might get out of date since this needs a rebuild to change.
+      </p>
       {projects.map(Project)}
 
       <h1>Last 4 Projects (dynamic)</h1>
-      <p>Slow because data needs to be fetched by client and not part of SEO, however does not need a rebuild to change</p>
+      <p>
+        Slower because data needs to be fetched by client and not part of SEO,
+        however more up to date since it does not need a rebuild to change.
+      </p>
       {fetching && (<div>Loading...</div>)}
       {fetching || (
         fetchedProjects?.items
@@ -53,9 +56,6 @@ const ProjectsPage: NextPage<ProjectsPageProps> = (props: ProjectsPageProps) => 
           .slice(0, 4)
           .map(Project)
       )}
-      <LinkTo href="/">
-        Go back home.
-      </LinkTo>
     </>
   );
 };

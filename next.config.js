@@ -2,5 +2,5 @@
 module.exports = {
   reactStrictMode: true,
   trailingSlash: true,
-  basePath: '/simonkarman-next',
+  basePath: '/nextjs-frontend-app-starter',
 };

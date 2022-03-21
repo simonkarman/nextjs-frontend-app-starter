@@ -1,5 +1,5 @@
-# simonkarman-next
-This is a [Next.js](https://nextjs.org/) with TypeScript starter for a portfolio website sucah as the [simonkarman.nl](https://www.simonkarman.nl) website.
+# nextjs-frontend-app-starter
+This is a [Next.js](https://nextjs.org/) with TypeScript starter for a portfolio website such as the [simonkarman.nl](https://www.simonkarman.nl) website.
 
 More information can be found on the [Next.js Frontend App Starter](https://www.simonkarman.nl/projects/nextjs-frontend-app-starter)
 
@@ -36,40 +36,47 @@ Then, run the development server:
 yarn dev
 ```
 
-Open [http://localhost:3000/http://localhost:3000/simonkarman-next/](http://localhost:3000/http://localhost:3000/simonkarman-next/) with your browser to see the result.
+Open [http://localhost:3000/http://localhost:3000/nextjs-frontend-app-starter/](http://localhost:3000/http://localhost:3000/nextjs-frontend-app-starter/) with your browser to see the result.
 
 # Introduction
-Most of the time, when I am programming, I am working with algorithms, backends, or cloud infrastructures, however as a fullstack developer I am also opinionated about frontend development. During my holiday break in between Quintor and Binx.io, I decided to bundle my frontend experience and best practices into a modern frontend starter. The starter is an example of how, with my current knowledge and experience, I would build a frontend web app for a portfolio website like simonkarman.nl.
+# Introduction
+I decided to bundle my frontend experience and best practices into a modern frontend starter. The starter is an example of how, with my current knowledge and experience, I would build a frontend web app for a portfolio website like simonkarman.nl.
 
 > Disclaimer: In no way am I trying to advocate that this is the only or the best solution for a frontend project. Nor am I claiming the solution is usable for every frontend app. This solution is simply what I currently think is well suited for a static generated web app. I based this on my own expertise and knowledge and I hope that this starter gives you some takeaways for your own frontend projects. If you have any feedback or suggestions, please [let me know](https://simonkarman.nl/contact), I am always willing to learn more!
 
 # Trying it out yourself
-You can try out this starter by copying the [source code](https://github.com/simonkarman/simonkarman-next), reading the Getting Started section in the README.md file, and then modifying the projects to suite your own needs. If you do, attribution is appreciated.
+You can try out this starter by copying the [source code](https://github.com/simonkarman/nextjs-frontend-app-starter), reading the Getting Started section in the README.md file, and then modifying the projects to suite your own needs. If you do, attribution is appreciated.
 
-A live demo of the app can be found on [karman.dev/simonkarman-next](https://karman.dev/simonkarman-next/) and showcases the exported version (`yarn build`) on a static cdn.
+A live demo of the app can be found on [karman.dev/nextjs-frontend-app-starter](https://karman.dev/nextjs-frontend-app-starter/). It showcases the exported version (`yarn build`) on a static cdn.
 
 # History
-During the corona pandemic in 2020, I rebuilt my portfolio website using [VueJS, Nuxt, and Contentful](https://simonkarman.nl/projects/simonkarman-nuxt). After that, during my work at Tikkie I worked with React and React Native using Typescript and based on these experiences I have been pondering lately about all the improvements I could make to my personal portfolio website. However I feel rebuilding my website is currently not worth the time. Nonetheless, I still enjoy sharing my experiences, so that is why I decided that instead of rebuilding my website, I would write a minimalistic showcase of all the features I would use if I were to rebuild my website right now.
+During the corona pandemic in 2020, I rebuilt my portfolio website using [VueJS, Nuxt, and Contentful](https://simonkarman.nl/projects/simonkarman-nuxt). After that, during my work at Tikkie I worked with React and React Native using Typescript. I have been pondering lately about what I have learned and which improvements I can make to my personal portfolio website. That is why I decided that, instead of rebuilding my website again, I would write a minimalistic showcase of all the features I would use if I were to rebuild my website right now.
 
 # Features
-I build this starter with a few different features that I want to highlight. The starter was built using React with Next.js and TypeScript. The starter can be used to creating a website ready for use on a static cdn (Content Delivery Network). It achieves this by using Next.js export functionality. The content is created in Contentful, which is a CMS, and the type definition in the project are auto generated. The project also defines some commonly used custom written React Hooks, it employs styling using the Styled Components library, achieves linting of the source code by using ESLint, runs Unit Tests using Jest, and adds precommit hooks using Husky. That's quite a lot to digest, so let's go through each feature one by one.
+I build this starter with a few different features that I want to highlight.
+
+The starter was built using React with Next.js and TypeScript and can be used to generate a static portfolio website by using the Next.js export functionality.
+
+The content is created in Contentful, which is a CMS, and the type definitions for Contentful are auto-generated.
+
+The project defines some commonly used custom written React Hooks, it employs styling using the Styled Components library, achieves linting of the source code using ESLint, runs Unit Tests using Jest, and adds precommit hooks using Husky.
+
+That's quite a lot of features, so let's go through each feature one by one.
 
 ## React with Next.js and TypeScript
-I choose to go for React. Although I am not against using Vue I feel like the current landscape (in at least the Netherlands) is more centered around React. With technologies such as [React Native](https://reactnative.dev/) and my current professional experience it felt like the logical choice.
+The starter is written using React, Next.js and Typescript. With technologies such as [React Native](https://reactnative.dev/) and my current professional experience it felt like the logical choice to use React over Vue.
 
-The React framework I decided to work with is [Next.js](https://nextjs.org/), which also made sense since I used the very similar [Nuxt](https://nuxtjs.org) for my portfolio website. In short, Next.js is a React Framework for Production, it ensures that common things like creating multiple pages, links between those pages, prerendering pages, and more are ready to use.
+The React framework I decided to work with is [Next.js](https://nextjs.org/), which is very similar to the Vue framework [Nuxt](https://nuxtjs.org), which I for my portfolio website. In short, Next.js ensures that common things like creating multiple pages, links between those pages, prerendering pages, and more are ready to use right out the box.
 
-Finally I choose to use TypeScript, this is a no brainer. From the moment that I started working with TypeScript, I completely stopped using plain JavaScript for all the projects I work on. The benefits that TypeScript provides are, in my opinion, a necessity in a modern way of working. I don't want to dive into the details here, since there is a lot to talk about, but there are many great articles online on why you should be using TypeScript instead of JavaScript.
+TypeScript. While a few years ago TypeScript support for libraries was sometimes lacking, nowadays TypeScript has been fully adopted. TypeScript provides benefits that are a necessity in a modern way of working. It ensures type safety, code completion, integrated documentation, and improved refactoring.
 
+Below is an example of a Page component in Next.js written in TypeScript:
 ```ts
-// Example of a the HomePage in Next.js using TypeScript
 const HomePage: NextPage = () => (
   <>
     <h1>Welcome!</h1>
     <p>
-      I decided to bundle my frontend experience and best practices into a modern frontend starter.
-      The starter is an example of how, with my current knowledge and experience,
-      I would build a frontend web app for a portfolio website like simonkarman.nl.
+      This starter is built using React, Next.js, and Typescript.
     </p>
     <p>
       <LinkTo href="/projects">
@@ -82,10 +89,10 @@ const HomePage: NextPage = () => (
 export default HomePage;
 ```
 
-## TypeScript Interfaces for Contentful
-The projects that are on my website are stored in a Content Management System (CMS) called [Contentful](https://www.contentful.com/). In contentful you can create your own entity types and give these entity types properties. I created an entity type 'project', with properties such as a name, a title, an image, and so forth.
+## Contentful and TypeScript
+The projects that are on my website are stored in a Content Management System (CMS). The CMS I'm using is [Contentful](https://www.contentful.com/). In contentful you can create your own entity types and give these entity types properties. I created an entity type 'project', with properties such as a name, a title, an image, and so forth.
 
-From within your code you can get all entities of a specific entity type. The issue is that TypeScript doesn't know what kind of properties to expect on that type. This means you have to redefine a TypeScript interface of your contentful entity type. This definition can get out of sync with the actual type at contentful, which can make for some annoying and hard to debug bugs. Luckily a tool exists to extract a TypeScript interface from a contentful entity type, which is [contentful-typescript-codegen](https://github.com/intercom/contentful-typescript-codegen).
+The website can fetch the defatils of projects from contentful to display on the pages. But how does your IDE now what properties to expect on a 'project' entity that is returned from Contentful? We can use a TypeScript interface for this. A tool exists to extract the TypeScript interface from a contentful entity type. This tool can be found on [contentful-typescript-codegen](https://github.com/intercom/contentful-typescript-codegen).
 
 An example of the interface that generated by the project is shown below.
 ```ts
@@ -110,14 +117,16 @@ export interface IProjectFields {
 }
 ```
 
-In the starter you can run `yarn contentful-typescript-codegen` to generate these TypeScript interfaces. You can find the resulting types in [@types/generated/contentful.d.ts](https://github.com/simonkarman/simonkarman-next/blob/main/%40types/generated/contentful.d.ts). You can look at the `contentful-typescript-codegen.sh` file to see more details. Make sure you create a `.env.local` property specifying the values as explained in the README.md of the project to ensure you app can successfully connect to Contentful.
+In the starter you can run `yarn contentful-typescript-codegen` to generate these TypeScript interfaces. You can find the resulting types in [@types/generated/contentful.d.ts](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/%40types/generated/contentful.d.ts). You can look at the `contentful-typescript-codegen.sh` file to see more details. Make sure you create a `.env.local` property specifying the values as explained in the README.md of the project to ensure you app can successfully connect to Contentful.
 
 ## Next Export
-The [`next export` feature](https://nextjs.org/docs/advanced-features/static-html-export) allows you to export you app to static HTML, which can be run standalone without the need of a Node.js server. This is useful when you want to deploy your website to a static cdn.
+The [`next export` feature](https://nextjs.org/docs/advanced-features/static-html-export) allows you to export you app to static files (HTML, CSS, and JavaScript). An exported Next.js app run standalone, without the need of a Node.js server. This is useful when you want to deploy your website to a static file hosting environment.
 
-To create a static export Next.js needs to know all the pages that it needs to generate. You can imagine that for the home page, about page, and other pages that the website has one of it is fairly easy. It simply looks at the pages you defined in the `/pages` directory and generates a html file for them. However when some of the pages are using dynamic routes, such as `simonkarman.nl/projects/karmannet`, where `karmannet` is the dynamic part of the route, it needs to know about all the different projects it needs to generate the html for. To achieve this you have to export a method called `getStaticPaths` which simply generates an array of all the different dynamic parameters you want to generate that page with.
+To create a static export, Next.js needs to know all the pages that it needs to generate. Next.js looks at the pages you defined in the `/pages` directory and generates a HTML file for each of them.
 
-This starter uses this structure in the [`pages/projects/[name].tsx`](https://github.com/simonkarman/simonkarman-next/blob/main/pages/projects/%5Bname%5D.tsx) file to generate a page for each project it can find at contentful.
+However when pages use dynamic routes, such as `simonkarman.nl/projects/karmannet`, where `karmannet` is the dynamic part of the route. Next.js needs to know about all the different dynamic routes before it can generate the websites. To let Next.js know which dynamics routes it should use you can export a method called `getStaticPaths`. This method should generate an array of all the different dynamic parameters you want to generate that page with.
+
+This starter uses this structure in the [`pages/projects/[name].tsx`](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/pages/projects/%5Bname%5D.tsx) file to generate a page for each project it can find at contentful.
 
 ```ts
 // part of 'pages/projects/[name].tsx'
@@ -134,30 +143,37 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 ```
 
-## Custom React Hooks
-If you have used React for yourself you have probably written some custom React hooks too. In the starter I have provided some commonly used hooks that you might use on a regular basis. These can be found in the `hooks/common` directory.
+## React Hooks
+React Hooks is the new way of writing React components that use state without having to write a class. This means that reusing and structuring you components becomes easier.
 
-- [useArray](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/useArray.ts) - This hooks makes it easy to work with arrays in React by providing methods form updating the array.
-- [useAsync](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/useAsync.ts) - This hook takes an async function, invokes it, and returns an array with information about the progress and execution of the function. This first element in the returning array is a boolean that indicates whether the async function is still in progress, the second element is the response of the async function when it is resolved, and the third and last element is the error for when the async function was rejected. 
-- [usePrevious](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/usePrevious.ts) - This hook makes it possible to use a previous value of some other state.
-- [useStateWithHistory](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/useStateWithHistory.ts) - This hook keeps track of all the changes to a variable and makes it possible to go back and forward in this history.
-- [useStorage](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/useStorage.ts) - These hooks (`useSessionStorage` and `useLocalStorages`) make it easy to store variables in either session or local storage in the browser.
-- [useTimeout](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/common/useTimeout.ts) - This hook lets you execute a method after a specified timeout.
+If you have used React before you have probably written some custom React hooks. Within the starter I have provided some hooks that I commonly use. You can find them in the `hooks/common` directory.
+
+- [useArray](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/useArray.ts) - This hook makes it easy to work with arrays in your state.
+- [useAsync](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/useAsync.ts) - This hook takes an async function, invokes it, and returns an array with information about the progress and execution of the function. This first element in the returning array is a boolean that indicates whether the async function is still in progress, the second element is the response of the async function when it is resolved, and the third and last element is the error for when the async function was rejected. 
+- [usePrevious](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/usePrevious.ts) - This hook makes it possible to keep track of the a previous value of some state.
+- [useStateWithHistory](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/useStateWithHistory.ts) - This hook keeps track of the changes that are made to a variable and makes it possible to go back and forward in this history.
+- [useStorage](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/useStorage.ts) - The hooks `useSessionStorage` and `useLocalStorages` allow you to store variables in either the session or local storage in the browser. Note that this can have some issues when used with Server Side Rendering.
+- [useTimeout](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/common/useTimeout.ts) - This hook lets you execute a method after a certain amount of time.
 
 > These hooks are inspired by [Web Dev Simplified](https://www.youtube.com/watch?v=vrIxu-kfAUo&ab_channel=WebDevSimplified) and have been rewritten in TypeScript by me.
 
-These hooks can then be used in more complex instances. For example, the `useAsync` hook is used by the [`hooks/projects/useProjects`](https://github.com/simonkarman/simonkarman-next/blob/main/hooks/projects/useProjects.ts) hook to create a hook that will fetch all the projects. Usage of this hook can be found in the [`pages/projects.tsx`](https://github.com/simonkarman/simonkarman-next/blob/main/ages/projects.tsx) file.
+An usage example can be found in the [`hooks/projects/useProjects`](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/hooks/projects/useProjects.ts)-file. There the `useAsync` hook is extended and used to fetch all the projects from Contenful. Usage of this hook can be found in the [`pages/projects.tsx`](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/ages/projects.tsx) file.
 
 ## Pregeneration vs Dynamic Loading
-With the `getStaticPaths` we have seen how data can be pregenerated at build time, while with the `useProjects` custom react hook we have seen how you can dynamically load new data at run time in the browser of the client.
+The contect of pages can be pre-generated during the `next export` or data can be fetched by the browser while a user loads the page. Both approaches have pros and cons. The [projects page](https://karman.dev/nextjs-frontend-app-starter/projects/) demonstrates the difference between the two.
 
-These two patterns are demonstrated on the [projects page](https://karman.dev/simonkarman-next/projects/). This page demonstrates the difference between the pregenerated list of projects and the dynamically rendered list of projects. Both options have up and downsides.
+> The `getStaticPaths` method can be used to pre-generate pages during export, while with the `useProjects` hook shows how you can dynamically load new data at run time in the browser of the client.
 
-The upside of pregenerating the list is that the page loads very fast and that the data is also part of Search Engine Optimization (SEO), however you need to run an export to show publish changes, if your content changes often, that might not be the best option. You can therefor also dynamically load your content, however the downside of loading them dynamically, as done with the `useProjects` hook, is that the client side code also needs to be able to access the contentful data directly, meaning your (read-only) api key will ship to your clients.
+The upside of pregenerating the list is that the page loads very fast and that the data is also part of Search Engine Optimization (SEO). A downside however is that you need to create a new export of your website any time you make changes to it. If your content changes often, this might be a problem.
 
-## Styling using Styled Components
-Although the starter is in no means a beautiful website, I did use a styling library to achieve consistent styling. The library used is [Styled Components](https://styled-components.com/). This nice thing about using styled components is that it really fits well into the component based idea of React. This makes it easy to use in React and also allows for easy creation of your own custom style library with lots of components such as buttons, texts, and cards in your own style.
+The upside of loading content dynamically is that the website will always fetch the lastest information from your source. A downside is that the client side code also needs to be able to access the contentful data directly, meaning your (read-only) api key will ship to your clients and that clients have to wait precious milliseconds before the content is loaded.
 
+A combination of both works best in most cases: Pre-generate the pages, but dynamically update them whenever new projects are available.
+
+## Styled Components
+For styling I used [Styled Components](https://styled-components.com/). What's great about styled components is that it really fits well into the component based approach of React, which makes it easy to create your own custom style library. Styled components comes out of the box with a great color scheme and a grid layout system.
+
+An example of a styled component can be seen below:
 ```ts
 // Define a Box with shadow, which is a div
 const Box = styled.div`
@@ -178,7 +194,7 @@ const Page = () => (
 );
 ```
 
-For next.js to be able to understand that styled-components is used it is important to also add the `styled-components` plugin the the `.babelrc` file.
+Next.js has to understand that styled-components are being used. You can do this by adding the `styled-components` plugin the the `.babelrc` file.
 
 ```json5
 # in '.babelrc'
@@ -199,19 +215,19 @@ For next.js to be able to understand that styled-components is used it is import
 }
 ```
 
-Please note that there is also a downside to using styled components. Since your styles are generated during runtime they are relatively slow to load. Luckily when using a pregenerated html page in a next exported page, these styles are already pre generated, so it is less of an issue.
+There is also a downside to using styled components. Since your styles are generated during runtime they are relatively slow to load. Luckily when using a pre-generation styles are part of the static files, so this is less of an issue.
 
-## Precommit Hooks with Husky
-I used the Husky library to run commands whenever you try to commit new code. These commands will build, test, and lint your code. Whenever one of these steps detects an issue, the commit will not go through and fail. This means you'll first need to fix your issues before commiting your code, which ensures all code pushed to the origin repository is valid.
+## Git Hooks with Husky
+As a developer you don't want to push code to your git repository that breaks. This means you'll first need to fix your issues before commiting your code, which ensures all code pushed to the origin repository is valid.
 
-The linting step is done using [ESLint](https://eslint.org/). ESLint statically analyzes your code to quickly find problems. Many problems ESLint finds can be automatically fixed. Only problems that cannot be automatically fixed have to be manually looked at. The rules and configuration of ESLint can be found in the [`.eslintrc.js`](https://github.com/simonkarman/simonkarman-next/blob/main/.eslintrc.js) file.
+I use Git hooks to achieve this. Everytime I try to commit new code the code will be build, tested, and linted. Whenever one of these steps detects an issue, the commit will not go through and fail. To easily setup Git hooks in an npm managed project you can use [Husky](https://www.npmjs.com/package/husky/v/4.3.8)
 
-The unit testing step is done using [Jest](https://jestjs.io/). Jest runs all tests it can find in files that match the `*.test.ts` expression.
+For the linting step I use [ESLint](https://eslint.org/). ESLint statically analyzes your code to quickly find problems. Many problems ESLint finds can be automatically fixed. Only problems that cannot be automatically fixed have to be manually looked at. The rules and configuration of ESLint I use can be found in the [`.eslintrc.js`](https://github.com/simonkarman/nextjs-frontend-app-starter/blob/main/.eslintrc.js) file.
 
-> Please note that the unit tests in this projects haven't been created yet. Writing tests for React Hooks and React Components is a topic for another time.
+For the unit testing step I use [Jest](https://jestjs.io/). Jest runs all tests it can find in files that match the `*.test.ts` expression. Please note that this starter does not contain proper unit tests.
 
 # Visual Studio Code
-While building this starter I used Visual Studio Code as IDE. Some plugins that are useful to enable while working with the above mention technologies and features are:
+When working on React project I generally use Visual Studio Code. Within VS Code I use some extension to make my life easier:
 - [Auto Rename Tag](https://marketplace.visualstudio.com/items?itemName=formulahendry.auto-rename-tag)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 - [Jest](https://marketplace.visualstudio.com/items?itemName=Orta.vscode-jest)
@@ -229,6 +245,6 @@ You can also enable fixing linting errors everytime you save a file in VSCode by
 # Trying it out
 That's all! I hope that this starter gives you some takeaways for your own frontend projects. If you have any feedback or suggestions, please [let me know](https://simonkarman.nl/contact), I am always willing to learn more!
 
-You can try out this starter by copying the [source code](https://github.com/simonkarman/simonkarman-next), reading the Getting Started section in the README.md file, and then modifying the projects to suite your own needs. If you do, attribution is appreciated.
+You can try out this starter by copying the [source code](https://github.com/simonkarman/nextjs-frontend-app-starter), reading the Getting Started section in the README.md file, and then modifying the projects to suite your own needs. If you do, attribution is appreciated.
 
-A live demo of the app can be found on [karman.dev/simonkarman-next](https://karman.dev/simonkarman-next/) and showcases the exported version (`yarn build`) on a static cdn.
+A live demo of the app can be found on [karman.dev/nextjs-frontend-app-starter](https://karman.dev/nextjs-frontend-app-starter/) and showcases the exported version (`yarn build`) on a static cdn.

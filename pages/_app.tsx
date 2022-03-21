@@ -10,19 +10,25 @@ const Header = styled.div`
   color: white;
 `;
 
+const Container = styled.div`
+  padding: 1em;
+`;
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
       <head>
-        <title>Simon Karman</title>
+        <title>Next.js Portfolio</title>
       </head>
       <Link href="/">
         <Header>
-          <h1>Simon Karman</h1>
-          <p>Programmer and Game Developer</p>
+          <h1>Portfolio starter</h1>
+          <p>by Simon Karman</p>
         </Header>
       </Link>
-      <Component {...pageProps} />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
     </>
   );
 }
